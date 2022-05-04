@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-input:rgb(54, 53, 53);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --light-background:rgb(230, 222, 220);
+}
+
+button{
+    cursor: pointer;
+    background-color: var(--background-input);
+    border: none;
+    color: gray;
+}
+
+button:hover{
+    color: white;
+}
+
+html{
+    font-size: 18px;
+    font-family: Arial;
+    text-align: center;
+    color: white;
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    position: relative;
+}
+
+.light-img{
+    display: none;
+}
+
+img{
+    display: block;
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+/* Content */
+.content{
+    display: block;
+    min-width: 450px;
+    z-index: 1000;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content .header-content{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom:2rem;
+}
+
+
+.content .header-content .heading{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 11px;
+}
+
+.content .header-content .ti-shine{
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.ti-bolt{
+    font-size: 1.25rem;
+    /* color: black; */
+    cursor: pointer;
+    display: none;
+}
+
+.input-handle{
+    background-color: var(--background-input);
+    box-shadow: var(--light-shadow);
+    height: 2.25rem;
+    border-radius: 6px;
+}
+
+.input-handle .input{
+    display: block;
+    width: 100%;
+    background-color: var(--background-input);
+    color: white;
+    height: 100%;
+    letter-spacing: 1.5px;
+    padding-left: 5px;
+    border: none;
+    border-radius: 6px;
+}
+
+
+/* Show Active */
+
+.element-content{
+    margin-top: 25px;
+    background-color: var(--background-input);
+    box-shadow: var(--light-shadow);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.check-element{
+    display: block;
+    height: 2.25rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px gray solid;
+    align-items: center;
+    text-align: left;
+}
+
+.check-element:hover .click-close{
+    display: inline-block;
+}
+
+.check-element input{
+    display: inline-block;
+    margin-left: 1rem;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: black 1px solid;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.check-element input:checked{
+    background-image: linear-gradient(30deg,rgb(98, 216, 224),rgb(6, 200, 248), rgb(224, 117, 189),pink);
+}
+
+.check-element input:hover{
+    border: 3px solid linear-gradient(30deg,rgb(98, 216, 224),rgb(6, 200, 248), rgb(224, 117, 189),pink);
+}
+
+.check-element label{
+    font-family: Arial;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-left: 40px;
+    line-height: 1.2rem;
+}
+
+.check-element button{
+    /* display: block; */
+    background-color: var(--background-input);
+    color: gray;
+    font-size: 1rem;
+    border: none;
+    position: absolute;
+    right: 5%;
+    display: none;
+    text-align: end;
+}
+
+.check-element button:hover{
+
+}
+
+
+/* Task bar */
+.taskbar{
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+    justify-content: space-around;
+    /* margin-top: 1rem; */
+    background-color: var(--background-input);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.inform-el{
+    color: gray;
+    font-weight: 500;
+    font-size: .75rem;
+}
+
+.all{
+    color: rgb(29, 120, 223);
+    padding-left: 10px;
+}
+
+.active{
+    padding-left: 10px;
+}
+
+.completeBtn{
+    padding-left: 10px;
+}
+
+
+/* Theme Button */
+
+.theme{
+    background-color: white;
+}
+
+.theme .light-img{
+    display: block;
+}
+
+.theme .header-img{
+    display: none;
+}
+
+.theme button{
+    background-color: var(--light-background);
+}
+.theme button:hover{
+    color: black;
+}
+
+.theme .input-handle{
+    border: none;
+}
+
+.theme .input{
+    background-color: var(--light-background);
+    border: none;
+    color: black;
+}
+
+.theme .taskbar{
+    background-color: var(--light-background);
+}
+
+.theme .element-content{
+    background-color: var(--light-background);
+}
+
+.theme label{
+    color: black;
+}
+
+.theme .ti-bolt{
+    display: block;
+}
+
+.theme .ti-shine{
+    display: none;
+}
+
+.theme .task-btn{
+    background-color: var(--light-background);
+}
+
+/* List Btn */
+
+
+@media screen and (max-width: 720px){
+
+    img{
+        height: 180px;
+    }
+
+    .content{
+        min-width:300px;
+        top: 10%;
+    }
+
+    button{
+        font-size: 0.75rem;
+    }
+
+    .taskbar button{
+        padding: 3px;
+        margin: 0;
+    }
+
+    .element-content{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+
+    .taskbar{
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    .task-btn{
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--background-input);
+        width: 100%;
+        height: 2rem;
+        /* margin-top: 80px; */
+        bottom: -50px;
+        border-radius: 8px;
+    }
+}
+
+/* Checked */
+.complete-act{
+    background-image: linear-gradient(30deg,rgb(98, 216, 224),rgb(6, 200, 248), rgb(224, 117, 189),pink);
+}

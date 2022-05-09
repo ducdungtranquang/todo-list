@@ -80,11 +80,13 @@ function renderHtml(actives){
             e.onclick = function(){
                 
                 if(e.checked){
+                    e.classList.add('.done-ac')
                     e.classList.add('complete-act')  
                     saveList();  
                }
                else{
-                    e.classList.remove('complete-act')  
+                    e.classList.remove('complete-act') 
+                    e.classList.remove('.done-ac') 
                     saveList();  
                }
             }
@@ -175,7 +177,13 @@ function saveList(){
         })
     })
     listComplete = data;
-    document.querySelector('.inform-el').innerHTML = data.length+" items";
+    if(data.length>1){
+        document.querySelector('.inform-el').innerHTML = data.length+" items";
+    }
+    else{
+        document.querySelector('.inform-el').innerHTML = data.length+" item";
+    }
+    
     localStorage.setItem("data", JSON.stringify(data))  
 }
 console.log(listComplete);

@@ -314,3 +314,13 @@ img{
 .complete-act{
     background-image: linear-gradient(30deg,rgb(98, 216, 224),rgb(6, 200, 248), rgb(224, 117, 189),pink);
 }
+
+.complete-act::after{
+    content: "";
+    position:absolute;
+    display: block;
+    width: 80%;
+    height: 3px;
+    background-color: gray;
+    margin-top: 5px;
+}

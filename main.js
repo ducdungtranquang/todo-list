@@ -80,14 +80,14 @@ function renderHtml(actives){
             e.onclick = function(){
                 
                 if(e.checked){
-                    e.classList.add('.done-ac')
                     e.classList.add('complete-act')  
                     saveList();  
+                    // Xac dinh cong viec da hoan thanh
                }
                else{
                     e.classList.remove('complete-act') 
-                    e.classList.remove('.done-ac') 
                     saveList();  
+                    // Xac dinh cong viec chua hoan thanh
                }
             }
 
